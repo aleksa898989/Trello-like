@@ -10,19 +10,19 @@ const List = ({ list, deleteItem }) => {
       <div className="item-wrapper">
         <h2>To do</h2>
         {todoList.map((item) => (
-          <Item deleteItem={deleteItem} item={item} />
+          <Item deleteItem={deleteItem} item={item} key={item.id} />
         ))}
       </div>
       <div className="item-wrapper">
         <h2>In progress</h2>
         {inProgressList.map((item) => (
-          <Item deleteItem={deleteItem} item={item} />
+          <Item deleteItem={deleteItem} item={item} key={item.id} />
         ))}
       </div>
       <div className="item-wrapper">
         <h2>Done</h2>
         {doneList.map((item) => (
-          <Item deleteItem={deleteItem} item={item} />
+          <Item deleteItem={deleteItem} item={item} key={item.id} />
         ))}
       </div>
     </div>
