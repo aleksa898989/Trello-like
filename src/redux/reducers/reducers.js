@@ -4,7 +4,7 @@ const initialState = {
   list: [
     {
       id: "",
-      content: "",
+      task: "",
       user: "",
       status: "",
       title: "",
@@ -17,6 +17,14 @@ export default function reducer(state = initialState, action) {
     case ADD_ITEM:
       state = {
         list: [...state.list, action.payload],
+      };
+      return state;
+    case UPDATE_ITEM:
+      state = {
+        list: [
+          ...state.list.filter((item) => item.id !== action.payload.id),
+          action.payload,
+        ],
       };
       return state;
     case DELETE_ITEM:

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "../modal";
 import List from "./list";
+import { statusOptions, users } from "./data";
 
 const Board = ({ list, add_task, delete_task }) => {
   const [task, setTask] = useState("");
@@ -14,18 +15,6 @@ const Board = ({ list, add_task, delete_task }) => {
     label: "Select status",
   });
 
-  const users = [
-    { value: "JD", label: "JD" },
-    { value: "AJ", label: "AJ" },
-    { value: "SS", label: "SS" },
-  ];
-
-  const statusOptions = [
-    { value: "todo", label: "To Do" },
-    { value: "in_progress", label: "In Progress" },
-    { value: "done", label: "Done" },
-  ];
-
   const generateId = () => {
     if (list && list.length > 0) {
       return Math.max(...list.map((item) => item.id)) + 1;
@@ -38,7 +27,7 @@ const Board = ({ list, add_task, delete_task }) => {
     const newId = generateId();
     add_task({
       id: newId.toString(),
-      content: task,
+      task: task,
       title: title,
       user: user.value,
       status: status.value,
@@ -55,6 +44,7 @@ const Board = ({ list, add_task, delete_task }) => {
   const deleteItem = (task) => {
     delete_task(task.id);
   };
+
   let incrementedId = generateId();
   return (
     <div>
