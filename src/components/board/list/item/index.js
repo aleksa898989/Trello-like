@@ -1,4 +1,4 @@
-import Draggable from "react-draggable";
+// import Draggable from "react-draggable";
 import EditModal from "./editItem";
 import { useState } from "react";
 
@@ -11,28 +11,28 @@ const Item = ({ item, deleteItem }) => {
   });
   const [task, setTask] = useState(item.task);
   return (
-    <Draggable>
-      <div className="item-inner">
-        <h3>Task {item.id}</h3>
-        <p>Title: {item.title}</p>
-        <p>Description: {item.task}</p>
-        <p>User: {item.user}</p>
-        <button onClick={() => deleteItem(item)}>
-          <i className="fa fa-trash"></i>
-        </button>
-        <EditModal
-          item={item}
-          title={title}
-          setTitle={setTitle}
-          user={user}
-          setUser={setUser}
-          status={status}
-          setStatus={setStatus}
-          task={task}
-          setTask={setTask}
-        />
-      </div>
-    </Draggable>
+    // <Draggable>
+    <div className="item-inner">
+      <h3>Task {item.id}</h3>
+      <p>Title: {item.title}</p>
+      <p>Description: {item.task}</p>
+      <p>User: {item.user}</p>
+      <button onClick={() => deleteItem(item)}>
+        <i className="fa fa-trash"></i>
+      </button>
+      <EditModal
+        item={item}
+        title={title}
+        setTitle={setTitle}
+        user={user}
+        setUser={setUser}
+        status={status}
+        setStatus={setStatus}
+        task={task}
+        setTask={setTask}
+      />
+    </div>
+    // </Draggable>
   );
 };
 
