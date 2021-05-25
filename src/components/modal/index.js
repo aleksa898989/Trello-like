@@ -20,7 +20,9 @@ const Modal = ({
     <ReactCircleModal
       backgroundColor="#0e101c;"
       toogleComponent={(onClick) => (
-        <button onClick={onClick}>Create Issue</button>
+        <button className="create-issue-btn" onClick={onClick}>
+          <i className="fa fa-plus"></i>
+        </button>
       )}
       offsetX={10}
       offsetY={10}
@@ -70,7 +72,7 @@ const Modal = ({
                 close();
               }}
             >
-              Save
+              <i className="fa fa-check"></i>
             </button>
           </div>
         </>

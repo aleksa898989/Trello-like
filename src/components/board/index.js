@@ -16,9 +16,8 @@ const Board = ({ list, add_task, delete_task }) => {
 
   const users = [
     { value: "JD", label: "JD" },
-    { value: "PP", label: "PP" },
-    { value: "TD", label: "TD" },
-    { value: "JS", label: "JS" },
+    { value: "AJ", label: "AJ" },
+    { value: "SS", label: "SS" },
   ];
 
   const statusOptions = [
@@ -38,7 +37,7 @@ const Board = ({ list, add_task, delete_task }) => {
   const createNewTask = () => {
     const newId = generateId();
     add_task({
-      id: newId,
+      id: newId.toString(),
       content: task,
       title: title,
       user: user.value,
