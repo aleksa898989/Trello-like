@@ -3,7 +3,6 @@ import EditModal from "./editItem";
 import { useState } from "react";
 
 const Item = ({ item, deleteItem }) => {
-  console.log(item);
   const [title, setTitle] = useState(item.title);
   const [user, setUser] = useState({ value: item.user, label: item.user });
   const [status, setStatus] = useState({
