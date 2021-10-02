@@ -1,8 +1,8 @@
 import ReactCircleModal from "react-circle-modal";
 import Select from "react-select";
-import { statusOptions, users } from "../../../data";
+import { statusOptions, users } from "components/board/data";
 import { useDispatch } from "react-redux";
-import actions from "../../../../../redux/actions/actions";
+import actions from "redux/actions/actions";
 
 const EditModal = ({
   title,

@@ -1,4 +1,3 @@
-// import Draggable from "react-draggable";
 import EditModal from "./editItem";
 import { useState } from "react";
 
@@ -10,13 +9,12 @@ const Item = ({ item, deleteItem }) => {
     label: item.status,
   });
   const [task, setTask] = useState(item.task);
+
   return (
-    // <Draggable>
     <div className="item-inner">
-      <h3>Task {item.id}</h3>
-      <p>Title: {item.title}</p>
-      <p>Description: {item.task}</p>
-      <p>User: {item.user}</p>
+      {Object.keys(item).map((taskItem, index) => {
+        return <h3 key={index}>{item[taskItem]}</h3>;
+      })}
       <button onClick={() => deleteItem(item)}>
         <i className="fa fa-trash"></i>
       </button>
@@ -32,7 +30,6 @@ const Item = ({ item, deleteItem }) => {
         setTask={setTask}
       />
     </div>
-    // </Draggable>
   );
 };
 
