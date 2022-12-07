@@ -1,5 +1,6 @@
-import EditModal from "./editItem";
 import { useState } from "react";
+import styles from "./ListItem.module.scss";
+import CreateEditModal from "components/CreateEditModal/CreateEditModal";
 
 const Item = ({ item, deleteItem }) => {
   const [title, setTitle] = useState(item.title);
@@ -8,17 +9,25 @@ const Item = ({ item, deleteItem }) => {
     value: item.status,
     label: item.status,
   });
+
   const [task, setTask] = useState(item.task);
 
+  const handleDeleteItem = () => {
+    deleteItem(item);
+  };
+
   return (
-    <div className="item-inner">
+    <div className={styles.inner}>
       {Object.keys(item).map((taskItem, index) => {
-        return <h3 key={index}>{item[taskItem]}</h3>;
+        return <p key={index}>{item[taskItem]}</p>;
       })}
-      <button onClick={() => deleteItem(item)}>
+
+      <button onClick={handleDeleteItem}>
         <i className="fa fa-trash"></i>
       </button>
-      <EditModal
+
+      <CreateEditModal
+        isEditMode
         item={item}
         title={title}
         setTitle={setTitle}

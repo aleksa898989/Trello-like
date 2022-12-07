@@ -1,4 +1,4 @@
-import { ADD_ITEM, DELETE_ITEM, UPDATE_ITEM } from "../types";
+import { ADD_ITEM, DELETE_ITEM, UPDATE_ITEM } from "redux/types";
 
 const initialState = {
   list: [
@@ -19,6 +19,7 @@ export default function reducer(state = initialState, action) {
         list: [...state.list, action.payload],
       };
       return state;
+
     case UPDATE_ITEM:
       state = {
         list: [
@@ -27,6 +28,7 @@ export default function reducer(state = initialState, action) {
         ],
       };
       return state;
+
     case DELETE_ITEM:
       state = {
         list: state.list.filter((task) => task.id !== action.payload),

@@ -1,5 +1,3 @@
-@import "./components/board/list/list";
-@import "./components/modal/modal";
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -116,9 +114,10 @@ button[type="button"]:hover {
 .css-2b097c-container {
   margin: 1.5rem 0;
 }
-.css-26l3qy-menu {
+.css-1nmdiq5-menu {
   .css-4ljt47-MenuList,
   .css-wvtb86-MenuList,
+  .css-1n6sfyn-MenuList,
   .css-1dm6w1v-MenuList {
     color: black !important;
     font-family: 500;
